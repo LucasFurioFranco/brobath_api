@@ -1,0 +1,5 @@
+//To build the docker image
+docker build -t brobath_test .
+
+//To run the docker image
+docker run --publish 3000:3000
