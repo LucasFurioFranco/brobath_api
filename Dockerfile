@@ -1,15 +1,15 @@
 FROM node:latest
 
-RUN mkdir -p /brobath_test
+CMD ["apt", "install", "nano"]
 
-WORKDIR /brobath_test
+RUN mkdir -p /app
 
-COPY package.json /brobath_test/
+WORKDIR /app
+
+COPY . /app
 
 RUN npm install
 
-COPY . /brobath_test
-
-EXPOSE 3000
+EXPOSE 5001
 
 CMD [ "npm", "start" ]
