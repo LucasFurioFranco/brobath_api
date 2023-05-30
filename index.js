@@ -2,7 +2,7 @@ const express    = require('express')
 
 const app = express()
 const port = 5001;
-const sys_name = "api v1 (inside docker)"
+const sys_name = "api v1 (inside docker again!)"
 
 
 
@@ -16,24 +16,26 @@ app.listen(port, () => {
 });
 
 
-app.get('/getter', function (req, res) {
+app.get('/', function (req, res) {
   res.status(200);
   res.json({
     "status": 200,
-    "message": "success",
-    "body":    req.query,
-    "payload": {},
+    "message":  "success",
+    "body":     req.body,
+    "query":    req.query,
+    "payload":  {},
     "sys_name": sys_name
   });
 });
 
-app.post('/poster', function (req, res) {
+app.post('/', function (req, res) {
   res.status(200);
   res.json({
-    "status":  200,
-    "message": "success",
-    "body":    req.body,
-    "payload": {},
+    "status":   200,
+    "message":  "success",
+    "body":     req.body,
+    "query":    req.query,
+    "payload":  {},
     "sys_name": sys_name
   })
 })
@@ -43,7 +45,8 @@ app.get('*', (req, res) => {
   res.json({
     "status":  404,
     "message": "Not Found: Method GET not defined for this path",
-    "body":    req.query,
+    "body":     req.body,
+    "query":    req.query,
     "payload": {},
     "sys_name": sys_name
   });
@@ -54,7 +57,8 @@ app.post('*', (req, res) => {
   res.json({
     "status":  404,
     "message": "Not Found: Method POST not defined for this path",
-    "body":    req.body,
+    "body":     req.body,
+    "query":    req.query,
     "payload": {},
     "sys_name": sys_name
   });
