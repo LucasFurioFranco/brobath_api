@@ -1,6 +1,8 @@
 FROM node:latest
 
-CMD ["apt", "install", "nano"]
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install nano -y
 
 RUN mkdir -p /app
 

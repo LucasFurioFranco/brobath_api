@@ -2,7 +2,7 @@ const express    = require('express')
 
 const app = express()
 const port = 5001;
-const sys_name = "api v0"
+const sys_name = "api v1 (inside docker)"
 
 
 
